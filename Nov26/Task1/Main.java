@@ -6,6 +6,12 @@ public class Main {
         arrayList.add(0);
         arrayList.add(-31);
         arrayList.add(-42);
+        arrayList.add(15);
+        arrayList.add(-6);
+        arrayList.add(-38);
+        arrayList.add(14);
+        arrayList.add(-129811);
+        arrayList.add(1);
     }
 
     public static void displayArrayList(ArrayList<Integer> arrayList) {
@@ -16,7 +22,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> arrayList = new ArrayList<>(4);
+        ArrayList<Integer> arrayList = new ArrayList<>(10);
         Main.generateArrayList(arrayList);
         Main.displayArrayList(arrayList);
     }

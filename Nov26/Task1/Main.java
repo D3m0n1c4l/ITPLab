@@ -3,7 +3,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-
 public class Main {
     public static int MIN_VALUE = -100000;
     public static int MAX_VALUE = 100000;
@@ -18,8 +17,9 @@ public class Main {
 
     public static void displayArrayList(ArrayList<Integer> arrayList) {
         System.out.println("[+] Output: ");
-        arrayList.replaceAll(Math::abs);
+        // arrayList.replaceAll(Math::abs);
         arrayList.stream()
+                .map(x -> (x < 0) ? -x : x)
                 .filter(x -> x % 3 == 0)
                 .forEach(System.out::println);
     }

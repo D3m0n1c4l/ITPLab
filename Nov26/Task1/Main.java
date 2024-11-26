@@ -17,6 +17,7 @@ public class Main {
     }
 
     public static void displayArrayList(ArrayList<Integer> arrayList) {
+        System.out.println("[+] Output: ");
         arrayList.replaceAll(Math::abs);
         arrayList.stream()
                 .filter(x -> x % 3 == 0)
@@ -25,7 +26,7 @@ public class Main {
 
     public static int getArrayListSize() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the array size: ");
+        System.out.print("[?] Enter the array size: ");
         return scanner.nextInt();
     }
 

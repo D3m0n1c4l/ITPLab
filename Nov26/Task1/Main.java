@@ -16,18 +16,32 @@ public class Main {
     }
 
     public static void displayArrayList(ArrayList<Integer> arrayList) {
-        System.out.println("[+] Output: ");
-        // arrayList.replaceAll(Math::abs);
-        arrayList.stream()
-                .map(x -> (x < 0) ? -x : x)
-                .filter(x -> x % 3 == 0)
-                .forEach(System.out::println);
+        if (!arrayList.isEmpty()) {
+            System.out.println("[+] Output: ");
+            // arrayList.replaceAll(Math::abs);
+            arrayList.stream()
+                    .map(x -> (x < 0) ? -x : x)
+                    .filter(x -> x % 3 == 0)
+                    .forEach(System.out::println);
+        }
     }
 
     public static int getArrayListSize() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("[?] Enter the array size: ");
-        return scanner.nextInt();
+        String input = scanner.nextLine();
+        try {
+            int arrayListSize = Integer.parseInt(input);
+            if (arrayListSize < 0) {
+                System.out.println("[!] Invalid input.");
+                return 0;
+            } else {
+                return arrayListSize;
+            }
+        } catch (NumberFormatException exception) {
+            System.out.println("[!] Invalid input.");
+            return 0;
+        }
     }
 
     public static void main(String[] args) {
